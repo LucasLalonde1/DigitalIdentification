@@ -20,7 +20,7 @@ class DriversLicenseAPIView(APIView):
             except DriversLicense.DoesNotExist: # If license number does not exist, raise error
                 return Response({"error": "License does not exist given that license number"}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return Response({"error": "API Did not recieve a license number"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "API Did not recieve a license number and cannot return a drivers license"}, status=status.HTTP_400_BAD_REQUEST)
         
     # No functionality, Not applicable?
     def post(self, request):
@@ -33,12 +33,12 @@ class CarRegistrationAPIView(APIView):
         if license_number:
             try: # Find and return car registration given a unique license number
                 registration = car_registration.objects.get(license_number=license_number)
-                serializer =  CarInsuranceSerializer(car_registration)
+                serializer =  CarRegistrationSerializer(car_registration)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             except registration.DoesNotExist: # If license number does not exist raise error
                 return Response({"error": "Registration Does Not exist given that license number"}, status=status.HTTP_400_BAD_REQUEST)
         else: 
-            return Response({"error": "API did not recieve a license number"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "API did not recieve a license number and cannot send registration data"}, status=status.HTTP_400_BAD_REQUEST)
         
     # Not applicable once again?
     def post(self, request):
@@ -55,7 +55,7 @@ class CarInsuranceAPIView(APIView):
             except insurance.DoesNotExist:
                 return Response({"error": "insurance given that policy number does not exist"}, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return Response({"error": "API did not recieve a policy number"})
+            return Response({"error": "API did not recieve a policy number and cannot return with insurance info"}, status=status.HTTP_400_BAD_REQUEST)
         
     def post(self, request):
         pass
