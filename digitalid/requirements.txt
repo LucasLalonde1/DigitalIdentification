@@ -2,5 +2,12 @@ asgiref==3.8.1
 dj-database-url==2.2.0
 Django==5.1.1
 django-cors-headers==4.4.0
+django-herokuify==1.0rc3
 djangorestframework==3.15.2
+gunicorn==23.0.0
+packaging==24.1
+postgres==4.0
+psycopg2-pool==1.2
+sqlparse==0.5.1
+typing_extensions==4.12.2
 whitenoise==6.7.0
