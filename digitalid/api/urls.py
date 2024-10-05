@@ -4,7 +4,7 @@ from .views import CarInsuranceAPIView, DriversLicenseAPIView, CarRegistrationAP
 
 
 urlpatterns = [
-    path('drivers-license/<str:license_number>/', DriversLicenseAPIView.as_view(), name="drivers-license-detail"),
-    path('car-registration/<str:license_number>/', CarRegistrationAPIView.as_view(), name="car-registration"),
-    path('car-insurance/<str:policy_number>/', CarInsuranceAPIView.as_view(), name="car-insurance"),
+    path('drivers-license/', DriversLicenseAPIView.as_view(), name="drivers-license-detail"),
+    path('car-registration/', CarRegistrationAPIView.as_view(), name="car-registration"),
+    path('car-insurance/', CarInsuranceAPIView.as_view(), name="car-insurance"),
 ]

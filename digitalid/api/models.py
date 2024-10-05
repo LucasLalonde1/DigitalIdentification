@@ -14,7 +14,7 @@ class DriversLicense(models.Model):
     def __str__(self):
         return self.license_number
     
-class car_registration(models.Model):
+class CarRegistration(models.Model):
     license_number = models.CharField(max_length=14, primary_key=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -27,7 +27,7 @@ class car_registration(models.Model):
     def __str__(self):
         return self.license_number
     
-class car_insurance(models.Model):
+class CarInsurance(models.Model):
     policy_number = models.CharField(max_length=11, primary_key=True)
     insurer = models.CharField(max_length=30)
     first_name = models.CharField(max_length=30)

@@ -85,11 +85,9 @@ WSGI_APPLICATION = 'digitalid.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default='postgres://ubcvv0l59uhfb7:p3be1635c6d22f3b746b0df12eca20517a9aac01a9a55d119e29e346d0bd0ccaf@c8lj070d5ubs83.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d2hd3pp4na283d')
 }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

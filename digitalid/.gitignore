@@ -1,0 +1,65 @@
+# Ignore the SQLite database file
+*.sqlite3
+
+# Ignore MySQL database files (if applicable)
+*.sql
+*.db
+
+# Django stuff:
+*.pyc
+*.pyo
+__pycache__/
+db.sqlite3
+migrations/
+
+# Django Secret Key or environment variables
+.env
+*.env
+
+# Ignore virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Ignore log files
+*.log
+
+# Ignore static file build outputs
+staticfiles/
+media/
+static/
+
+# Ignore compiled files (e.g. Sass/SCSS)
+*.sass-cache
+*.css.map
+*.css
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore Docker-related files
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Ignore files for Python packaging
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Ignore temporary or backup files
+*.bak
+*.swp
+*.swo
+*.tmp
+*~
+
+# Ignore node_modules if using npm or yarn
+node_modules/
+yarn.lock
+package-lock.json

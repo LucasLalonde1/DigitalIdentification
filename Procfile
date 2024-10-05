@@ -1,1 +1,0 @@
-web: cd digitalid && gunicorn digitalid.wsgi
