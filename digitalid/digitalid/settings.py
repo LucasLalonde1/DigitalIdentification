@@ -85,10 +85,25 @@ WSGI_APPLICATION = 'digitalid.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import os
 import dj_database_url
+
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://ubcvv0l59uhfb7:p3be1635c6d22f3b746b0df12eca20517a9aac01a9a55d119e29e346d0bd0ccaf@c8lj070d5ubs83.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d2hd3pp4na283d')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',  # Supabase's default DB name
+        'USER': 'postgres.tuxnzoivztnypurmrmmx',  # Full username as per your connection details
+        'PASSWORD': '',  # Add your password here, if any
+        'HOST': 'aws-0-ca-central-1.pooler.supabase.com',  # Correct host provided by you
+        'PORT': '6543',  # The correct port number based on your information
+    }
 }
+
+# Optionally using dj-database-url to handle dynamic URLs
+DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres.tuxnzoivztnypurmrmmx@aws-0-ca-central-1.pooler.supabase.com:6543/postgres')
+
+DATABASES['default'] = dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

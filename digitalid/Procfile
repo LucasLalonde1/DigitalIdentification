@@ -1,1 +1,1 @@
-web: gunicorn digitalid.wsgi
+web: gunicorn digitalid.wsgi --log-file -
