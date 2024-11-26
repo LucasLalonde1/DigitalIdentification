@@ -1,4 +1,4 @@
-# digitalid
+# DigitalIdentification project
 
 ## There are 4 directories in this project...
 
