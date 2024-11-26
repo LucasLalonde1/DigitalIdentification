@@ -14,3 +14,6 @@
 
 **mobilevenv** is a python virtual environment for the mobile app api
 
+**Hardware Specifications**": Arduino ESP32, PN532 NFC reader, LCD screen
+
+
