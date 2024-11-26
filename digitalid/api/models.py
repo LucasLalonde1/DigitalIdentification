@@ -14,6 +14,7 @@ class DriversLicense(models.Model):
     def __str__(self):
         return self.license_number
     
+# I did not implement functionality for this function
 class CarRegistration(models.Model):
     license_number = models.CharField(max_length=14, primary_key=True)
     first_name = models.CharField(max_length=30)
@@ -26,7 +27,8 @@ class CarRegistration(models.Model):
 
     def __str__(self):
         return self.license_number
-    
+
+# I did not implement functionality for this function
 class CarInsurance(models.Model):
     policy_number = models.CharField(max_length=11, primary_key=True)
     insurer = models.CharField(max_length=30)
