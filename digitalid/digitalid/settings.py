@@ -30,7 +30,6 @@ ALLOWED_HOSTS = ['digitalid-c324f1ded574.herokuapp.com', 'localhost']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
-    "https://digitalid-c324f1ded574.herokuapp.com",
 ]
 
 
