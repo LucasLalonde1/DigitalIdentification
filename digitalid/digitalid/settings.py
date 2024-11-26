@@ -93,14 +93,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',  # Supabase's default DB name
         'USER': 'postgres.tuxnzoivztnypurmrmmx',  # Full username as per your connection details
-        'PASSWORD': '',  # Add your password here, if any
-        'HOST': 'aws-0-ca-central-1.pooler.supabase.com',  # Correct host provided by you
-        'PORT': '6543',  # The correct port number based on your information
+        'PASSWORD': 'AUxf6rx3yXurtIbd',  # Replace with your actual password
+        'HOST': 'aws-0-ca-central-1.pooler.supabase.com',  # Correct host
+        'PORT': '6543',  # Correct port number
     }
 }
 
-# Optionally using dj-database-url to handle dynamic URLs
-DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres.tuxnzoivztnypurmrmmx@aws-0-ca-central-1.pooler.supabase.com:6543/postgres')
+# Using dj-database-url to handle connection strings dynamically (if needed)
+DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres.tuxnzoivztnypurmrmmx:AUxf6rx3yXurtIbd@aws-0-ca-central-1.pooler.supabase.com:6543/postgres')
 
 DATABASES['default'] = dj_database_url.config(default=DATABASE_URL, conn_max_age=600, ssl_require=True)
 

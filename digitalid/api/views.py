@@ -31,7 +31,9 @@ def decrypt_aes(encrypted_data):
         print("Decrypted bytes:", decrypted)  # See the entire decrypted byte array
         sys.stdout.flush()
 
-
+        # Replace null byte as a bytes literal (b'\x00' is for bytes, '\x00' is for str)
+        decrypted = decrypted.replace(b'\x00', b'')  # clean the data from null bytes
+        
         return decrypted.decode('utf-8')
 
     except Exception as e:
@@ -40,6 +42,7 @@ def decrypt_aes(encrypted_data):
         sys.stdout.flush()
         # Re-raise the exception with detailed information
         raise ValueError(f"Decryption failed: {str(e)}. Encrypted data: {encrypted_data!r}")
+
 class DriversLicenseAPIView(APIView):
     
     def post(self, request):
